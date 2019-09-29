@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">APA References Guide</string>
+    <string name="str_home">Main</string>
+    <string name="str_splash">Splash Screen</string>
+    <string name="str_settings">Guides</string>
+    <string name="str_aboutus">About Us</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
