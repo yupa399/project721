@@ -1,6 +1,6 @@
 # project721
 internal project
 
- .splash page
- .navigation bar
- .three pages to show different content
+ 1.splash page
+ 2.navigation bar
+ 3.three pages to show different content
