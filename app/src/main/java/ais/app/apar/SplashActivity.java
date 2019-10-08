@@ -6,6 +6,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import ais.app.apar.services.APARWebservice;
+
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -15,6 +17,8 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        //update database when start up the app
+        APARWebservice.updateMainContent(this);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
