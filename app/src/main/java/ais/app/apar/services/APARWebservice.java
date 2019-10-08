@@ -7,9 +7,6 @@ import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
-import org.json.JSONArray;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
