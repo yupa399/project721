@@ -85,11 +85,14 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_menu_home:
                         navigateToFragment(getResources().getString(R.string.str_home));
                         break;
-                    case R.id.nav_menu_settings:
+                    case R.id.nav_menu_Guides:
                         navigateToFragment(getResources().getString(R.string.str_settings));
                         break;
-                    case R.id.nav_menu_aboutus:
-                        navigateToFragment(getResources().getString(R.string.str_aboutus));
+                    case R.id.nav_menu_abouts:
+                        navigateToFragment(getResources().getString(R.string.str_abouts));
+                        break;
+                    case R.id.nav_menu_examples:
+                        navigateToFragment(getResources().getString(R.string.str_examples));
                         break;
                     default:
                         break;
@@ -144,9 +147,11 @@ public class MainActivity extends AppCompatActivity {
             if (title.equals(getResources().getString(R.string.str_home))) {
                 fragment = new HomeScreenFragment();
             } else if (title.equals(getResources().getString(R.string.str_settings))) {
-                fragment = new SettingsScreenFragment();
-            } else if (title.equals(getResources().getString(R.string.str_aboutus))) {
+                fragment = new GuideFragment();
+            } else if (title.equals(getResources().getString(R.string.str_abouts))) {
                 fragment = new AboutUsScreenFragment();
+            }else if (title.equals(getResources().getString(R.string.str_examples))) {
+                fragment = new APARExamplesFragment();
             }
 
             // Add fragment with tag

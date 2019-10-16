@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     android:background="@color/fragmentBackground"
     android:gravity="center"
-    tools:context="ais.app.apar.SettingsScreenFragment">
+    tools:context=".GuideFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/str_settings" />
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

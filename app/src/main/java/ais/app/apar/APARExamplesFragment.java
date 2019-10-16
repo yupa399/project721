@@ -2,25 +2,30 @@ package ais.app.apar;
 
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
 
-public class SettingsScreenFragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class APARExamplesFragment extends Fragment {
 
 
-    public SettingsScreenFragment() {
+    public APARExamplesFragment() {
         // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings_screen, container, false);
+        return inflater.inflate(R.layout.fragment_aparexamples, container, false);
     }
 
 }

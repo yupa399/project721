@@ -7,14 +7,17 @@
             android:icon="@android:drawable/ic_popup_reminder"
             android:title="@string/str_home" />
         <item
-            android:id="@+id/nav_menu_settings"
+            android:id="@+id/nav_menu_examples"
+            android:icon="@android:drawable/ic_menu_slideshow"
+            android:title="@string/str_examples" />
+        <item
+            android:id="@+id/nav_menu_Guides"
             android:icon="@android:drawable/ic_menu_edit"
             android:title="@string/str_settings" />
-
         <item
-            android:id="@+id/nav_menu_aboutus"
+            android:id="@+id/nav_menu_abouts"
             android:icon="@android:drawable/ic_dialog_info"
-            android:title="@string/str_aboutus" />
+            android:title="@string/str_abouts" />
     </group>
 
 </menu>
