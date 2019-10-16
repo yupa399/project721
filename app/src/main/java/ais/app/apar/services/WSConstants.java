@@ -6,4 +6,5 @@ public interface WSConstants {
     String hostUrl = "http://projectsto.c1.biz/";
     String imageType = "image/png";
     String successFlag = "success";
+    String failureFlag = "failure";
 }

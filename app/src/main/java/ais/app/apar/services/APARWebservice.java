@@ -24,22 +24,25 @@ public class APARWebservice implements WSConstants {
     private static DBController dbController;
 
     static final MediaType jsonHeader = MediaType.parse(jsonType);
-    static final String getContentUrl = hostUrl + "getMainContent.php";
+    static final String fetchContentUrl = hostUrl + "fetchContent.php";
 
 
-    public static String updateMainContent(Context context) {
+    public static String fetchAndUpdateMainContent(Context context) {
 
         JSONObject query = new JSONObject();
-        query.put("mainContent", "latest");
+        query.put("queryData", "latest");
         RequestBody req = RequestBody.create(jsonHeader, query.toJSONString());
-        Request request = new Request.Builder().url(getContentUrl).post(req).build();
+        Request request = new Request.Builder().url(fetchContentUrl).post(req).build();
         String dataStr = executeOK3Post(request, "data");
         if (dataStr == null) {
             return null;
         }
-        ArrayList<MainContent> stuffList = (ArrayList<MainContent>) JSON.parseArray(dataStr, MainContent.class);
+        ArrayList<MainContent> mainContentList = (ArrayList<MainContent>) JSON.parseArray(dataStr, MainContent.class);
+        if(mainContentList.size() == 0){
+            return failureFlag;
+        }
         dbController = new DBController(context);
-        dbController.updateMainContent(stuffList.get(0));
+        dbController.updateMainContent(mainContentList.get(0));
         return successFlag;
     }
 
@@ -49,7 +52,6 @@ public class APARWebservice implements WSConstants {
         String res;
         try {
             Response response = client.newCall(request).execute();
-
             if (response.isSuccessful()) {
                 String resJSONString = response.body().string();
                 JSONObject ret = JSON.parseObject(resJSONString);
