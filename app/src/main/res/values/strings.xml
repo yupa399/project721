@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">APA References Guide</string>
     <string name="str_home">Home Page</string>
-    <string name="str_splash">Splash Screen</string>
+    <string name="str_splash">APR References Guide</string>
     <string name="str_settings">Guides</string>
     <string name="str_abouts">About Us</string>
     <string name="str_examples">Examples</string>
