@@ -23,12 +23,10 @@ public class GuideFragment extends Fragment implements OnPageChangeListener, OnL
 
     private static final String TAG = GuideFragment.class.getSimpleName();
 
-    public static final String GUIDE_FILE = "AIS brand guidelines lo-res.pdf";
+    public static final String GUIDE_FILE = "guide.pdf";
 
     PDFView pdfView;
 
-
-    String pdfFileName;
 
     public GuideFragment() {
         // Required empty public constructor
@@ -43,6 +41,7 @@ public class GuideFragment extends Fragment implements OnPageChangeListener, OnL
         View guideView = inflater.inflate(R.layout.fragment_guides, container, false);
         pdfView = guideView.findViewById(R.id.pdfView);
         pdfView.setBackgroundColor(Color.LTGRAY);
+        pdfView.setEnabled(false);
         displayFromAsset(GUIDE_FILE);
         return guideView;
     }

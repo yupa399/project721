@@ -1,15 +1,19 @@
 <resources>
-    <string name="app_name">APA References Guide</string>
+    <string name="app_name">APA Pocket Guide</string>
     <string name="str_home">Home Page</string>
-    <string name="str_splash">APR References Guide</string>
+    <string name="str_splash">APA Pocket Guide</string>
     <string name="str_settings">Guides</string>
     <string name="str_abouts">About Us</string>
     <string name="str_examples">Examples</string>
-    <string name="str_title">APA References</string>
+    <string name="str_title">APA Pocket Guide</string>
 
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="journals_or_periodicals">Journals or Periodicals</string>
+    <string name="secondary_resource">Secondary Resource</string>
+    <string name="electronic_sources">Electronic Sources</string>
+    <string name="books">Books</string>
 
 
 </resources>

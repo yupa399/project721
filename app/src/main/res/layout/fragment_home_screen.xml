@@ -2,25 +2,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:Referencing="http://schemas.android.com/apk/res-auto"
     android:background="@color/fragmentBackground"
     android:gravity="center"
     tools:context="ais.app.apar.HomeScreenFragment">
 
-    <TextView
-        android:id="@+id/txtMain"
+
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="20dp"
-        android:paddingTop="40dp"
-        android:paddingRight="20dp"
-        android:scrollbars="vertical"
-        android:text="@string/str_home"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textSize="18sp" />
-<!--        android:text="Referencing: A key academic skill\n Accurate and correct referencing is fundamental to academic writing.-->
-<!--    Academic writing requires the use of other authors to strengthen arguments and insights as well as support your own ideas. The purpose of referencing is to acknowledge the source of the other information you have used in your writing. Academic writing enables knowledge and ideas on a topic to be shared and built upon.\n\n Referencing acknowledges the source of the information. When you refer to another writer’s ideas in your assignment, whether you paraphrase or use a direct quotation, you must give the source. Failure to do so is considered plagiarism.\n-->
-<!--    APA 6th is the style of referencing used by the University of Auckland Business School.\n" />-->
+        android:layout_height="match_parent"/>
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtMain"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingTop="40dp"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:scrollbars="vertical"-->
+<!--        android:text="@string/str_home"-->
+<!--        android:textColor="@color/design_default_color_on_secondary"-->
+<!--        android:textSize="18sp" />-->
+<!--&lt;!&ndash;        android:text="Referencing: A key academic skill\n Accurate and correct referencing is fundamental to academic writing.&ndash;&gt;-->
+<!--&lt;!&ndash;    Academic writing requires the use of other authors to strengthen arguments and insights as well as support your own ideas. The purpose of referencing is to acknowledge the source of the other information you have used in your writing. Academic writing enables knowledge and ideas on a topic to be shared and built upon.\n\n Referencing acknowledges the source of the information. When you refer to another writer’s ideas in your assignment, whether you paraphrase or use a direct quotation, you must give the source. Failure to do so is considered plagiarism.\n&ndash;&gt;-->
+<!--&lt;!&ndash;    APA 6th is the style of referencing used by the University of Auckland Business School.\n" />&ndash;&gt;-->
 
 
 </LinearLayout>

@@ -1,21 +1,31 @@
 package ais.app.apar;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-public class HomeScreenFragment extends Fragment {
+import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
+import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
+import com.github.barteksc.pdfviewer.listener.OnPageErrorListener;
+import com.shockwave.pdfium.PdfDocument;
 
-    private static String txt = "Referencing: A key academic skill\n" +
-            "Accurate and correct referencing is fundamental to academic writing. Academic writing requires the use of other authors to strengthen arguments and insights as well as support your own ideas. The purpose of referencing is to acknowledge the source of the other information you have used in your writing. Academic writing enables knowledge and ideas on a topic to be shared and built upon.\n" +
-            "\n" +
-            "Referencing acknowledges the source of the information. When you refer to another writer’s ideas in your assignment, whether you paraphrase or use a direct quotation, you must give the source. Failure to do so is considered plagiarism.\n" +
-            "APA 6th is the style of referencing used by the University of Auckland Business School.\n";
+import java.util.List;
+
+public class HomeScreenFragment extends Fragment implements OnPageChangeListener, OnLoadCompleteListener,
+        OnPageErrorListener {
+    private static final String TAG = GuideFragment.class.getSimpleName();
+
+
+    public static final String GUIDE_FILE = "main.pdf";
+
+    PDFView pdfView;
 
     public HomeScreenFragment() {
         // Required empty public constructor
@@ -25,12 +35,63 @@ public class HomeScreenFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View hv = inflater.inflate(R.layout.fragment_home_screen, container, false);
-        TextView textView = hv.findViewById(R.id.txtMain);
-        textView.setText(txt);
-        return hv;
+        View homeView = inflater.inflate(R.layout.fragment_home_screen, container, false);
+        pdfView = homeView.findViewById(R.id.pdfView);
+        pdfView.setBackgroundColor(Color.WHITE);
+        pdfView.setEnabled(false);
+        displayFromAsset(GUIDE_FILE);
+        return homeView;
     }
 
+    @Override
+    public void onPageChanged(int page, int pageCount) {
+
+    }
+
+
+    private void displayFromAsset(String assetFileName) {
+        pdfView.fromAsset(assetFileName)
+                .defaultPage(0)
+                .onPageChange(this)
+                .enableAnnotationRendering(true)
+                .onLoad(this)
+                .scrollHandle(null)
+                .spacing(1) // in dp
+                .onPageError(this)
+                .load();
+    }
+
+    @Override
+    public void loadComplete(int nbPages) {
+        PdfDocument.Meta meta = pdfView.getDocumentMeta();
+        Log.e(TAG, "title = " + meta.getTitle());
+        Log.e(TAG, "author = " + meta.getAuthor());
+        Log.e(TAG, "subject = " + meta.getSubject());
+        Log.e(TAG, "keywords = " + meta.getKeywords());
+        Log.e(TAG, "creator = " + meta.getCreator());
+        Log.e(TAG, "producer = " + meta.getProducer());
+        Log.e(TAG, "creationDate = " + meta.getCreationDate());
+        Log.e(TAG, "modDate = " + meta.getModDate());
+
+        printBookmarksTree(pdfView.getTableOfContents(), "-");
+
+    }
+
+    public void printBookmarksTree(List<PdfDocument.Bookmark> tree, String sep) {
+        for (PdfDocument.Bookmark b : tree) {
+
+            Log.e(TAG, String.format("%s %s, p %d", sep, b.getTitle(), b.getPageIdx()));
+
+            if (b.hasChildren()) {
+                printBookmarksTree(b.getChildren(), sep + "-");
+            }
+        }
+    }
+
+    @Override
+    public void onPageError(int page, Throwable t) {
+
+    }
 
 
 }

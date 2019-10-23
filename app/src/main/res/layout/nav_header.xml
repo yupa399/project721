@@ -20,8 +20,9 @@
         android:layout_margin="12dp"
         android:fontFamily="@font/ubuntu_medium"
         android:text="@string/str_title"
-        android:textColor="@color/black_overlay"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
 </FrameLayout>
