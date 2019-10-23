@@ -60,15 +60,20 @@ public class APARExamplesFragment extends Fragment implements OnPageChangeListen
         btnBooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                resetButton();
                 displayFromAsset(BOOKS_FILE);
+                btnBooks.setEnabled(false);
+                btnBooks.setTextColor(Color.BLUE);
             }
         });
         btnESource = examplesView.findViewById(R.id.btnESource);
         btnESource.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                resetButton();
                 displayFromAsset(ESOURCE_FILE);
-//                btnESource.setBackgroundColor();
+                btnESource.setEnabled(false);
+                btnESource.setTextColor(Color.BLUE);
             }
         });
 
@@ -76,17 +81,34 @@ public class APARExamplesFragment extends Fragment implements OnPageChangeListen
         btnJOP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                resetButton();
                 displayFromAsset(JOP_FILE);
+                btnJOP.setEnabled(false);
+                btnJOP.setTextColor(Color.BLUE);
             }
         });
         btnSResource = examplesView.findViewById(R.id.btnSResource);
         btnSResource.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                resetButton();
                 displayFromAsset(SRESOURCE_FILE);
+                btnSResource.setEnabled(false);
+                btnSResource.setTextColor(Color.BLUE);
             }
         });
         return examplesView;
+    }
+
+    private void resetButton(){
+        btnESource.setTextColor(Color.BLACK);
+        btnSResource.setTextColor(Color.BLACK);
+        btnBooks.setTextColor(Color.BLACK);
+        btnJOP.setTextColor(Color.BLACK);
+        btnESource.setEnabled(true);
+        btnSResource.setEnabled(true);
+        btnBooks.setEnabled(true);
+        btnJOP.setEnabled(true);
     }
 
     private void displayFromAsset(String assetFileName) {
