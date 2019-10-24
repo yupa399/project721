@@ -94,6 +94,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_menu_examples:
                         navigateToFragment(getResources().getString(R.string.str_examples));
                         break;
+                    case R.id.nav_menu_apaword:
+                        navigateToFragment(getResources().getString(R.string.str_apaword));
+                        break;
                     default:
                         break;
                 }
@@ -152,6 +155,8 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new AboutUsScreenFragment();
             }else if (title.equals(getResources().getString(R.string.str_examples))) {
                 fragment = new APARExamplesFragment();
+            }else if (title.equals(getResources().getString(R.string.str_apaword))) {
+                fragment = new APAWordFragment();
             }
 
             // Add fragment with tag
