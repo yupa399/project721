@@ -19,8 +19,8 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        UpdateMainContent updateMainContent = new UpdateMainContent();
-        updateMainContent.execute();
+//        UpdateMainContent updateMainContent = new UpdateMainContent();
+//        updateMainContent.execute();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {

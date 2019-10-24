@@ -54,7 +54,7 @@ public class APARExamplesFragment extends Fragment implements OnPageChangeListen
 
         View examplesView = inflater.inflate(R.layout.fragment_aparexamples, container, false);
         pdfView = examplesView.findViewById(R.id.pdfView);
-        pdfView.setBackgroundColor(Color.LTGRAY);
+        pdfView.setBackgroundColor(Color.WHITE);
         displayFromAsset(ESOURCE_FILE);
         btnBooks = examplesView.findViewById(R.id.btnBooks);
         btnBooks.setOnClickListener(new View.OnClickListener() {

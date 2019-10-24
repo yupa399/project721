@@ -40,7 +40,7 @@ public class GuideFragment extends Fragment implements OnPageChangeListener, OnL
         //AIS brand guidelines lo-res.pdf
         View guideView = inflater.inflate(R.layout.fragment_guides, container, false);
         pdfView = guideView.findViewById(R.id.pdfView);
-        pdfView.setBackgroundColor(Color.LTGRAY);
+        pdfView.setBackgroundColor(Color.WHITE);
         pdfView.setEnabled(false);
         displayFromAsset(GUIDE_FILE);
         return guideView;
